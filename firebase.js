@@ -27,7 +27,7 @@ var ui = new firebaseui.auth.AuthUI(firebase.auth());
 var uiConfig = {
   callbacks: {
     signInSuccessWithAuthResult: function(authResult, redirectUrl) {
-        location.href = "/newsletter-success.html?" + authResult.user.uid + "," + authResult.user.email;
+        location.href = "https://erumi321.github.io/PaulProgrammerSite/newsltter-success.html?" + authResult.user.uid + "," + authResult.user.email;
 
         return false;
     },
