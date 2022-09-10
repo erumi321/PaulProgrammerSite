@@ -7,7 +7,7 @@ db.collection('subbedUsers').doc(uid).set({
     email: email
 }).then(() =>{
     alert("Success!");
-    location.href = "/index.html"
+    location.href = "https://erumi321.github.io/PaulProgrammerSite/"
     return false;
 }).catch((error) => {
     alert("Error: email 24edruminer this notice\n" + error);
