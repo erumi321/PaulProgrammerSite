@@ -10,7 +10,7 @@ const getNewQuote = async () =>
 
     const date = new Date();
 
-    const indx = (date.getDate() * date.getMonth() * date.getFullYear()) % allQuotes.length;
+    const indx = (date.getDate() * (date.getMonth() + 1) * date.getFullYear()) % allQuotes.length;
 
     const quote=allQuotes[indx].text;
 
