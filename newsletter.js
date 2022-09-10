@@ -13,18 +13,25 @@
 
   const db = firebase.firestore();
 
-var url = document.URL;
+  function loadFirebase() {
+    setTimeout(function() {
+        var url = document.URL;
 
-var uid = url.split("?")[1].split(",")[0];
-var email = url.split("?")[1].split(",")[1];
+        var uid = url.split("?")[1].split(",")[0];
+        var email = url.split("?")[1].split(",")[1];
+        
+        console.log(uid, email);
+    
+        db.collection('subbedUsers').doc(uid).set({
+            email: email
+        }).then(() =>{
+            alert("Success!");
+            location.href = "https://erumi321.github.io/PaulProgrammerSite/"
+            return false;
+        }).catch((error) => {
+            alert("Error: email 24edruminer this notice\n" + error);
+            return false;
+        })
+    }, 2000)
 
-db.collection('subbedUsers').doc(uid).set({
-    email: email
-}).then(() =>{
-    alert("Success!");
-    location.href = "https://erumi321.github.io/PaulProgrammerSite/"
-    return false;
-}).catch((error) => {
-    alert("Error: email 24edruminer this notice\n" + error);
-    return false;
-})
+  }
